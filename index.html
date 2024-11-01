@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register for a Free Pizza</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+            <small class="error" id="nameError">Name must be at least 3 characters.</small>
+
+            <label for="yearOfBirth">Year of Birth (must be between 1900 and 2013):</label>
+            <input type="number" id="yearOfBirth" min="1900" max="2013" required>
+            <small class="error" id="yearOfBirthError">Enter a valid year between 1900 and 2013.</small>
+
+            <label>
+                <input type="checkbox" id="isUSResident"> Do you live in the United States?
+            </label>
+
+            <div id="zipcodeField" style="display: none;">
+                <label for="zipcode">Zipcode:</label>
+                <input type="text" id="zipcode">
+                <small class="error" id="zipcodeError">Enter a valid 5-digit zipcode.</small>
+            </div>
+
+            <label for="password">Password (at least 8 characters, including an uppercase letter, lowercase letter, and a number):</label>
+            <input type="password" id="password" required>
+            <small class="error" id="passwordError">Password must be at least 8 characters and include uppercase, lowercase, and a number.</small>
+
+            <p>Preferred type of pizza:</p>
+            <label><input type="radio" name="pizzaType" value="withPineapple" required> With pineapple</label>
+            <label><input type="radio" name="pizzaType" value="withoutPineapple"> Without pineapple</label>
+            <label><input type="radio" name="pizzaType" value="noPreference"> I do not like pizza</label>
+            <small class="error" id="pizzaTypeError">Please select a pizza preference.</small>
+
+            <button type="submit">Submit</button>
+            <p id="successMessage" style="display: none;">Accepted</p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
